@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "tb_name")
+@Table(name = "tb_game")
 public class Games {
     //Atributos
     @Id
@@ -15,11 +15,14 @@ public class Games {
     @Column(name = "game_year")
     private Integer year;
     private String genre;
-    private String plataforms;
+    private String platforms;
     private Double score;
     private String imgUrl;
-    private String shortDescriptio;
-    private String longDescriptio;
+    //Usar o columnDefinition = "TEXT" fará que o banco de dados entende que o campo pode ter mais do que 255 caracteres
+    @Column(columnDefinition = "TEXT")
+    private String shortDescription;
+    @Column(columnDefinition = "TEXT")
+    private String longDescription;
 
     //Construtor Vazio
     public Games(){
@@ -27,16 +30,16 @@ public class Games {
     }
 
     //Construtor
-    public Games(Long id, String title, Integer year, String genre, String plataforms, Double score, String imgUrl, String shortDescriptio, String longDescriptio) {
+    public Games(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl, String shortDescription, String longDescription) {
         this.id = id;
         this.title = title;
         this.year = year;
         this.genre = genre;
-        this.plataforms = plataforms;
+        this.platforms = platforms;
         this.score = score;
         this.imgUrl = imgUrl;
-        this.shortDescriptio = shortDescriptio;
-        this.longDescriptio = longDescriptio;
+        this.shortDescription = shortDescription;
+        this.longDescription = longDescription;
     }
 
 
@@ -74,12 +77,12 @@ public class Games {
         this.genre = genre;
     }
 
-    public String getPlataforms() {
-        return plataforms;
+    public String getPlatforms() {
+        return platforms;
     }
 
-    public void setPlataforms(String plataforms) {
-        this.plataforms = plataforms;
+    public void setPlatforms(String platforms) {
+        this.platforms = platforms;
     }
 
     public Double getScore() {
@@ -98,20 +101,20 @@ public class Games {
         this.imgUrl = imgUrl;
     }
 
-    public String getShortDescriptio() {
-        return shortDescriptio;
+    public String getShortDescription() {
+        return shortDescription;
     }
 
-    public void setShortDescriptio(String shortDescriptio) {
-        this.shortDescriptio = shortDescriptio;
+    public void setShortDescriptio(String shortDescription) {
+        this.shortDescription = shortDescription;
     }
 
-    public String getLongDescriptio() {
-        return longDescriptio;
+    public String getLongDescription() {
+        return longDescription;
     }
 
-    public void setLongDescriptio(String longDescriptio) {
-        this.longDescriptio = longDescriptio;
+    public void setLongDescriptio(String longDescription) {
+        this.longDescription = longDescription;
     }
 
 
