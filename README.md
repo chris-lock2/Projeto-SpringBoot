@@ -1,2 +1,3 @@
 # Projeto-SpringBoot
-Projeto para estudo de springboot
+
+Mini projeto de estudo de SpringBoot
