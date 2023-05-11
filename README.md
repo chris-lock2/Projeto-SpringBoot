@@ -16,4 +16,3 @@ de jogos separando em jogos de RPG e Plataformas, começando por:
 - Deploy e CORS;
 - Endpoints;
 - Modelagem de dados;
-
